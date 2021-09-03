@@ -1,0 +1,32 @@
+<!--This is just a basic HTML file, this project is configured with Thymeleaf template engine
+    so there's some fancy stuff it can do that HTMl doesn't do by itself. I.E. looping, switch statements,
+    dynamic data interpolation, etc.
+
+    You can absolutely hardcode this page, or you can make it dynamic and read from a text/data file.
+
+    A good iteration of this project would be to edit this project, so that it dynamically presents your
+        schedule based on what day of the week it is.
+
+    an approach to this would be to make a second endpoint @GetMapping("/day") that returns a "dailySchedule.html"
+        which does a check and displays your daily schedule from a txt or JSON or XML file.
+-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Fall Schedule</title>
+</head>
+
+<body>
+    <h1>Fall Semester, 2021</h1>
+    <ul>
+        <li>Monday:<br>&emsp;Biology, 10:30-11:25am<br>&emsp;Economics, 12:15-1:05pm</li>
+        <li>Tuesday:<br>&emsp;Biology Lab, <br>&emsp;Music History, <br>&emsp;Data Structures and Algorithms, 3:45-5:15pm</li>
+        <li>Wednesday:<br></li>
+        <li>Thursday:<br></li>
+        <li>Friday:<br>Music History, <br>&emsp;Data Structures and Algorithms, 3:45-5:15pm</li>
+    </ul>
+</body>
+</html>

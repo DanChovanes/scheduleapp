@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <p th:text></p>
+    <meta charset="UTF-8"/>
+    <title th:text="${#temporals.dayOfWeekName(localDateTime)} + '\'s Schedule' "></title>
+</head>
+
+<body>
+    <h1 th:text="${#temporals.dayOfWeekName(localDateTime)}"></h1>
+
+    <p th:text="${schedule.get(#temporals.dayOfWeekName(localDateTime))}"></p>
+
+</body>
+
+</html>

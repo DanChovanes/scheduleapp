@@ -1,0 +1,23 @@
+{
+  "Monday": {
+    "Biology": "10:15-11:05am",
+    "Economics": "11:55-12:50pm"
+  },
+  "Tuesday": {
+    "BiologyLab": "10:30-11:55pm",
+    "Music": "12:30-1:25pm",
+    "DataStructures": "3:45-5:10pm"
+  },
+  "Wednesday": {
+    "Biology": "10:15-11:05am",
+    "Economics": "11:55-12:50pm"
+  },
+  "Thursday": {
+    "Music": "12:30-1:25pm",
+    "DataStructures": "3:45-5:10pm"
+  },
+  "Friday": {
+    "Biology": "10:15-11:05am",
+    "Economics": "11:55-12:50pm"
+  }
+}
