@@ -23,12 +23,10 @@
             <td><b>End Time</b></td>
         </tr>
         <tr th:each="class : ${schedule.getSch().get(#temporals.dayOfWeekName(localDateTime))}">
-
             <td th:text="${class.getClassName()}"></td>
             <td th:text="${class.getRoomNum()}"></td>
             <td th:text="${class.getStartTime()}"></td>
             <td th:text="${class.getEndTime()}"></td>
-
         </tr>
     </table>
 

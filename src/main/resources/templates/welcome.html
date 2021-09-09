@@ -1,15 +1,3 @@
-<!--This is just a basic HTML file, this project is configured with Thymeleaf template engine
-    so there's some fancy stuff it can do that HTMl doesn't do by itself. I.E. looping, switch statements,
-    dynamic data interpolation, etc.
-
-    You can absolutely hardcode this page, or you can make it dynamic and read from a text/data file.
-
-    A good iteration of this project would be to edit this project, so that it dynamically presents your
-        schedule based on what day of the week it is.
-
-    an approach to this would be to make a second endpoint @GetMapping("/day") that returns a "dailySchedule.html"
-        which does a check and displays your daily schedule from a txt or JSON or XML file.
--->
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -17,16 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Fall Schedule</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Fall Semester, 2021</h1>
-    <ul>
-        <li>Monday:<br>&emsp;Biology, 10:30-11:25am<br>&emsp;Economics, 12:15-1:05pm</li>
-        <li>Tuesday:<br>&emsp;Biology Lab, <br>&emsp;Music History, <br>&emsp;Data Structures and Algorithms, 3:45-5:15pm</li>
-        <li>Wednesday:<br></li>
-        <li>Thursday:<br></li>
-        <li>Friday:<br>Music History, <br>&emsp;Data Structures and Algorithms, 3:45-5:15pm</li>
-    </ul>
+    <nav class="navbar navbar-dark bg-info">
+        <h1>Fall Semester, 2021</h1>
+    </nav>
+
+    <table class="table table-striped">
+        <tr class="table-info">
+            <td><h3>Monday</h3></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Class Name</b></td>
+            <td><b>Room Number</b></td>
+            <td><b>Start Time</b></td>
+            <td><b>End Time</b></td>
+        </tr>
+        <tr th:each="day : ${schedule.get('Monday')}">
+
+            <td th:text="${day.getClassName()}"></td>
+            <td th:text="${day.getRoomNum()}"></td>
+            <td th:text="${day.getStartTime()}"></td>
+            <td th:text="${day.getEndTime()}"></td>
+        </tr>
+    </table>
+    <table class="table table-striped">
+        <tr class="table-success">
+            <td><h3>Tuesday</h3></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><b>Class Name</b></td>
+            <td><b>Room Number</b></td>
+            <td><b>Start Time</b></td>
+            <td><b>End Time</b></td>
+        </tr>
+        <tr th:each="day : ${schedule.get('Tuesday')}">
+
+            <td th:text="${day.getClassName()}"></td>
+            <td th:text="${day.getRoomNum()}"></td>
+            <td th:text="${day.getStartTime()}"></td>
+            <td th:text="${day.getEndTime()}"></td>
+        </tr>
+    </table>
+    <table class="table table-striped">
+        <tr class="table-warning">
+            <td><h3>Wednesday</h3></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Class Name</b></td>
+            <td><b>Room Number</b></td>
+            <td><b>Start Time</b></td>
+            <td><b>End Time</b></td>
+        </tr>
+        <tr th:each="day : ${schedule.get('Wednesday')}">
+
+            <td th:text="${day.getClassName()}"></td>
+            <td th:text="${day.getRoomNum()}"></td>
+            <td th:text="${day.getStartTime()}"></td>
+            <td th:text="${day.getEndTime()}"></td>
+        </tr>
+    </table>
+    <table class="table table-striped">
+        <tr class="table-primary">
+            <td><h3>Thursday</h3></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Class Name</b></td>
+            <td><b>Room Number</b></td>
+            <td><b>Start Time</b></td>
+            <td><b>End Time</b></td>
+        </tr>
+        <tr th:each="day : ${schedule.get('Thursday')}">
+
+            <td th:text="${day.getClassName()}"></td>
+            <td th:text="${day.getRoomNum()}"></td>
+            <td th:text="${day.getStartTime()}"></td>
+            <td th:text="${day.getEndTime()}"></td>
+        </tr>
+
+    </table>
+    <table class="table table-striped">
+        <tr class="table-danger">
+            <td><h3>Friday</h3></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><b>Class Name</b></td>
+            <td><b>Room Number</b></td>
+            <td><b>Start Time</b></td>
+            <td><b>End Time</b></td>
+        </tr>
+        <tr th:each="day : ${schedule.get('Friday')}">
+
+            <td th:text="${day.getClassName()}"></td>
+            <td th:text="${day.getRoomNum()}"></td>
+            <td th:text="${day.getStartTime()}"></td>
+            <td th:text="${day.getEndTime()}"></td>
+        </tr>
+    </table>
+
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
 </html>

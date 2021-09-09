@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Map;
 
 @SpringBootApplication
@@ -24,7 +25,8 @@ public class ScheduleApplication {
 	}
 
 	@GetMapping("/")
-	public String schedule() {
+	public String schedule(Model model) {
+		model.addAttribute("schedule", new Schedule().getSch());
 		return "welcome";
 	}
 
@@ -32,6 +34,7 @@ public class ScheduleApplication {
 	public String scheduleDay(Model model) throws IOException {
 		model.addAttribute("localDateTime", LocalDateTime.now());
 		model.addAttribute("schedule", new Schedule());
+		Schedule schedule = new Schedule();
 		return "day";
 	}
 }
